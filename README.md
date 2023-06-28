@@ -1,5 +1,7 @@
 # Angular Greengrocers
 
+![Angular Greengrocers](./images/angular-greengrocers.gif)
+
 ## Learning objectives
 
 - Use Angular services to share state between multiple components
