@@ -1,6 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { ItemsService } from '../items.service';
-import { Item } from '../models/item';
+import { Item, ItemType } from '../models/item';
 
 @Component({
   selector: 'app-store',
@@ -11,6 +11,8 @@ import { Item } from '../models/item';
 export class StoreComponent implements OnInit {
   items: any
   sort: string = 'name'
+  filterType: ItemType | null = null;
+
 
   constructor(private readonly itemsService: ItemsService) { }
 
@@ -25,4 +27,20 @@ export class StoreComponent implements OnInit {
   changeSort(filter: string){
     this.sort=filter
   }
+
+  async filterByType(): Promise<void> {
+    if (this.filterType === null) {
+      this.filterType = ItemType.Fruit;
+    } else if (this.filterType === ItemType.Fruit) {
+      this.filterType = ItemType.Vegetable;
+    } else {
+      this.filterType = null;
+    }
+    await this.getFilteredItems();
+  }
+
+  async getFilteredItems() {
+    this.items = await this.itemsService.getItemsByType(this.filterType);
+  }
+
 }

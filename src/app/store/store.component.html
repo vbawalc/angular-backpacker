@@ -2,6 +2,9 @@
   <button (click)="changeSort('type')">Sort by type</button>
   <button (click)="changeSort('price')">Sort by price</button>
   <button (click)="changeSort('name')">Sort by name</button>
+  <button class="filter-button" (click)="filterByType()">
+    toggle filter
+  </button>
 </div>
 <ul class="item-list store--item-list">
   <li *ngFor="let item of items | sortPipe: this.sort">
