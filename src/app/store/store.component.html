@@ -1,9 +1,7 @@
 <div class="sort--buttons">
-  <button (click)="changeSort('type')">Sort by type</button>
-  <button (click)="changeSort('price')">Sort by price</button>
-  <button (click)="changeSort('name')">Sort by name</button>
-  <button class="filter-button" (click)="filterByType()">
-    toggle filter
+  <button (click)="toggleChangeSortType()">Sorting by: {{sort}}</button>
+  <button (click)="toggleFilterByType()">
+    Filter: {{filterType}}
   </button>
 </div>
 <ul class="item-list store--item-list">

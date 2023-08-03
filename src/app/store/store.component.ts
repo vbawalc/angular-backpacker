@@ -27,8 +27,12 @@ export class StoreComponent implements OnInit {
   changeSort(filter: string){
     this.sort=filter
   }
+  
+  toggleChangeSortType(){
+    this.sort = this.sort === 'name' ? 'price' : 'name';
+  }
 
-  async filterByType(): Promise<void> {
+  async toggleFilterByType(): Promise<void> {
     if (this.filterType === null) {
       this.filterType = ItemType.Fruit;
     } else if (this.filterType === ItemType.Fruit) {
