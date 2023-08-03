@@ -1,5 +1,10 @@
+<div class="sort--buttons">
+  <button (click)="changeSort('type')">Sort by type</button>
+  <button (click)="changeSort('price')">Sort by price</button>
+  <button (click)="changeSort('name')">Sort by name</button>
+</div>
 <ul class="item-list store--item-list">
-  <li *ngFor="let item of items">
+  <li *ngFor="let item of items | sortPipe: this.sort">
     <div class="store--item-icon">
       <img 
       src="{{'../../assets/icons/' + item.id + '.svg'}}" 
@@ -8,3 +13,4 @@
     <button (click)="addItem(item)">Add to cart</button>
   </li>
 </ul>
+

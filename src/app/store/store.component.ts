@@ -9,7 +9,8 @@ import { Item } from '../models/item';
 })
 
 export class StoreComponent implements OnInit {
-  items: any 
+  items: any
+  sort: string = 'name'
 
   constructor(private readonly itemsService: ItemsService) { }
 
@@ -19,5 +20,9 @@ export class StoreComponent implements OnInit {
   
   addItem(item: Item): void {
     this.itemsService.addItem(item);
+  }
+
+  changeSort(filter: string){
+    this.sort=filter
   }
 }

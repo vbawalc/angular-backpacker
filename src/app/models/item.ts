@@ -1,4 +1,6 @@
 export interface Item {
+  [key: string]: any;
+  
   id: string;
   name: string;
   price: number;
@@ -9,3 +11,4 @@ export enum ItemType {
   Fruit = "fruit",
   Vegetable = "vegetable"
 }
+
