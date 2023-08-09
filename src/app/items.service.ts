@@ -39,17 +39,17 @@ export class ItemsService {
   async getItemsByType(type: ItemType | null) {
     if (type) {
       return await firstValueFrom(
-        this.http.get<Item[]>(environment.apiUrl + 'groceries?type=' + type)
+        this.http.get<Item[]>(environment.apiUrl + 'item?type=' + type)
       );
     }
     return await firstValueFrom(
-      this.http.get<Item[]>(environment.apiUrl + 'groceries')
+      this.http.get<Item[]>(environment.apiUrl + 'items')
     );
   }
 
   async getAllItems(): Promise<Item[]> {
     const response = await firstValueFrom(
-      this.http.get<Item[]>(`${environment.apiUrl}groceries`)
+      this.http.get<Item[]>(`${environment.apiUrl}items`)
     );
     return response;
   }

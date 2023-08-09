@@ -1,8 +1,5 @@
 <div class="sort--buttons">
   <button (click)="toggleChangeSortType()">Sorting by: {{sort}}</button>
-  <button (click)="toggleFilterByType()">
-    Filter: {{filterType}}
-  </button>
 </div>
 <ul class="item-list store--item-list">
   <li *ngFor="let item of items | sortPipe: this.sort">
