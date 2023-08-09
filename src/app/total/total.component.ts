@@ -12,10 +12,10 @@ export class TotalComponent {
   cartItems: Map<Item, number>;
 
   constructor(private readonly itemsService: ItemsService) {
-    this.cartItems = this.itemsService.getCartItems();
+    this.cartItems = this.itemsService.getLuggageItems();
   }
 
-  getTotalPrice(): number {
-    return [...this.cartItems].reduce((totalCost, [item, quantity]) => totalCost + item.price * quantity, 0);
+  getTotalWeight(): number {
+    return [...this.cartItems].reduce((totalCost, [item, quantity]) => totalCost + item.weight * quantity, 0);
   }
 } 

@@ -10,29 +10,29 @@ import { environment } from 'src/environments/environment';
 })
 export class ItemsService {
   private _items: Promise<Item[]> = this.getAllItems();
-  cartItems: Map<Item, number>;
+  luggageItems: Map<Item, number>;
   
   constructor(private readonly http: HttpClient) {
-    this.cartItems = new Map<Item, number>();
+    this.luggageItems = new Map<Item, number>();
   }
 
-  getCartItems(): Map<Item, number> {
-    return this.cartItems;
+  getLuggageItems(): Map<Item, number> {
+    return this.luggageItems;
   }
 
   addItem(item: Item) {
-    if(this.cartItems.has(item))
-      this.cartItems.set(item, this.cartItems.get(item) as number + 1);
+    if(this.luggageItems.has(item))
+      this.luggageItems.set(item, this.luggageItems.get(item) as number + 1);
     else
-      this.cartItems.set(item, 1);
-    return this.cartItems.get(item)
+      this.luggageItems.set(item, 1);
+    return this.luggageItems.get(item)
   }
 
   removeItem(item: Item): boolean{
-    if(!this.cartItems.has(item)) return false;
-    const currentValue = this.cartItems.get(item) as number;
-    this.cartItems.set(item, currentValue - 1);
-    if(currentValue === 1) this.cartItems.delete(item)
+    if(!this.luggageItems.has(item)) return false;
+    const currentValue = this.luggageItems.get(item) as number;
+    this.luggageItems.set(item, currentValue - 1);
+    if(currentValue === 1) this.luggageItems.delete(item)
     return true
   }
 

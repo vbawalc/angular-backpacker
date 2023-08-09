@@ -3,9 +3,9 @@ import { ItemsService } from '../items.service';
 import { Item } from '../models/item'
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  selector: 'app-luggage',
+  templateUrl: './luggage.component.html',
+  styleUrls: ['./luggage.component.css']
 })
 
 export class CartComponent {
@@ -20,10 +20,10 @@ export class CartComponent {
   }
 
   getItemCount(item: Item) {
-    return this.itemsService.getCartItems().get(item);
+    return this.itemsService.getLuggageItems().get(item);
   }
 
   getItems(): Item[] {
-    return Array.from(this.itemsService.getCartItems().keys());
+    return Array.from(this.itemsService.getLuggageItems().keys());
   }
 }

@@ -3,12 +3,14 @@ export interface Item {
   
   id: string;
   name: string;
-  price: number;
+  weight: number;
   type: ItemType;
 }
 
 export enum ItemType {
-  Fruit = "fruit",
-  Vegetable = "vegetable"
+  Tshirt = "tshirt",
+  Trouser = "trouser",
+  Outwear = "outwear",
+  Underwear = "underwear"
 }
 

@@ -4,8 +4,8 @@ import { Item, ItemType } from '../models/item';
 
 @Component({
   selector: 'app-store',
-  templateUrl: './store.component.html',
-  styleUrls: ['./store.component.css']
+  templateUrl: './wardrobe.component.html',
+  styleUrls: ['./wardrobe.component.css']
 })
 
 export class StoreComponent implements OnInit {
@@ -29,14 +29,14 @@ export class StoreComponent implements OnInit {
   }
   
   toggleChangeSortType(){
-    this.sort = this.sort === 'name' ? 'price' : 'name';
+    this.sort = this.sort === 'name' ? 'weight' : 'name';
   }
 
   async toggleFilterByType(): Promise<void> {
     if (this.filterType === null) {
-      this.filterType = ItemType.Fruit;
-    } else if (this.filterType === ItemType.Fruit) {
-      this.filterType = ItemType.Vegetable;
+      this.filterType = ItemType.Tshirt;
+    } else if (this.filterType === ItemType.Outwear) {
+      this.filterType = ItemType.Outwear;
     } else {
       this.filterType = null;
     }
