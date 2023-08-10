@@ -4,5 +4,8 @@
 
 <div>
   <span class="total-number">{{ getTotalWeight()}}</span>
+  
+<div *ngIf="isLuggageFree()">Free</div>
+<div *ngIf="!isLuggageFree()">Buy additional luggage</div>
 </div>
   

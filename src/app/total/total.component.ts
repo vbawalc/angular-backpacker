@@ -18,4 +18,12 @@ export class TotalComponent {
   getTotalWeight(): number {
     return [...this.cartItems].reduce((totalWeight, [item, quantity]) => totalWeight + item.weight * quantity, 0);
   }
+
+  isLuggageFree(): boolean {
+    if (this.getTotalWeight() < 10){
+      return true;
+    }
+    else
+    return false;
+  }
 } 
