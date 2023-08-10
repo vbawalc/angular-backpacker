@@ -21,8 +21,9 @@ public class itemService {
         Item item4 = new Item(4,"Black Tshirt", 0.4, "tshirt");
         Item item5 = new Item(5,"Socks", 0.1, "underwear");
         Item item6 = new Item(6,"Underwear", 0.1, "underwear");
+        Item item7 = new Item(7,"Hoodie", 0.9, "outwear");
 
-        itemList.addAll(Arrays.asList(item1, item2, item3, item4, item5, item6));
+        itemList.addAll(Arrays.asList(item1, item2, item3, item4, item5, item6, item7));
     }
 
     public Optional<Item> getItem(Integer id) {
