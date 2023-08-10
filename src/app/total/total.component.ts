@@ -16,6 +16,6 @@ export class TotalComponent {
   }
 
   getTotalWeight(): number {
-    return [...this.cartItems].reduce((totalCost, [item, quantity]) => totalCost + item.weight * quantity, 0);
+    return [...this.cartItems].reduce((totalWeight, [item, quantity]) => totalWeight + item.weight * quantity, 0);
   }
 } 
